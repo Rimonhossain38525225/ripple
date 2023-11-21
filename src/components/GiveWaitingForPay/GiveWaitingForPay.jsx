@@ -7,7 +7,7 @@ import { copyAdress } from "../../appDataYouCanChange/allData";
 function GiveWaitingForPay() {
   const [lastChanceNumber, setLastChanceNumber] = useState(
     localStorage.getItem("chance") == null
-      ? 999999999
+      ? 76266515
       : localStorage.getItem("chance")
   );
   const [radiusData, setRadiusData] = useState(
@@ -16,7 +16,11 @@ function GiveWaitingForPay() {
       : localStorage.getItem("radius")
   );
 
-
+  // reinitial value
+  if (Number(lastChanceNumber) >= 100000000) {
+    setLastChanceNumber((pre) => (pre = 76266515));
+    setRadiusData((pre) => (pre = 167.017));
+  }
   useEffect(() => {
     setTimeout(() => {
       localStorage.setItem("chance", lastChanceNumber);
@@ -26,18 +30,13 @@ function GiveWaitingForPay() {
 
   useEffect(() => {
     setInterval(() => {
-      if (lastChanceNumber >= 100000000) {
-        setLastChanceNumber(76266515);
-        setRadiusData(167.017);
-      } else {
-        setLastChanceNumber(
-          (pre) =>
-            Number(pre) + Math.floor(Math.random() * (80000 - 2000 + 1)) + 2000
-        );
-        setRadiusData(
-          (pre) => Number(pre) - Number((Math.random() * 0.5).toFixed(3))
-        );
-      }
+      setLastChanceNumber(
+        (pre) =>
+          Number(pre) + Math.floor(Math.random() * (60000 - 2000 + 1)) + 2000
+      );
+      setRadiusData(
+        (pre) => Number(pre) - Number((Math.random() * 0.5).toFixed(3))
+      );
     }, 4000);
   }, []);
 
@@ -263,9 +262,7 @@ function GiveWaitingForPay() {
                     <div className="num">100,000,000</div>
                     <span>/</span>
                     <div className="num">
-                      {lastChanceNumber.toString().slice(0, 2)},
-                      {lastChanceNumber.toString().slice(2, 5)},
-                      {lastChanceNumber.toString().slice(5, 8)}
+                      {lastChanceNumber.toLocaleString()}
                     </div>
                   </div>
                   <p>
