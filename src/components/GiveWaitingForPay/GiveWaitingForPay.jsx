@@ -4,19 +4,47 @@ import wordImage from "../../assets/img/top-img.8ba4e5ca.png";
 import qrImage from "../../assets/img/qrCode.png";
 import { copyAdress } from "../../appDataYouCanChange/allData";
 
-
-
 function GiveWaitingForPay() {
-  // const storedData = localStorage.getItem('myData');
-  const [lastChanceNumber, setLastChanceNumber] = useState(76266515);
-  const [strokeValue, setStrokeValue] = useState(167.017);
+  const [lastChanceNumber, setLastChanceNumber] = useState(
+    localStorage.getItem("chance") == null
+      ? 999999999
+      : localStorage.getItem("chance")
+  );
+  const [radiusData, setRadiusData] = useState(
+    localStorage.getItem("radius") == null
+      ? 167.017
+      : localStorage.getItem("radius")
+  );
 
-  
 
-  // copy 
+  useEffect(() => {
+    setTimeout(() => {
+      localStorage.setItem("chance", lastChanceNumber);
+      localStorage.setItem("radius", radiusData);
+    }, 4000);
+  }, [lastChanceNumber, radiusData]);
+
+  useEffect(() => {
+    setInterval(() => {
+      if (lastChanceNumber >= 100000000) {
+        setLastChanceNumber(76266515);
+        setRadiusData(167.017);
+      } else {
+        setLastChanceNumber(
+          (pre) =>
+            Number(pre) + Math.floor(Math.random() * (80000 - 2000 + 1)) + 2000
+        );
+        setRadiusData(
+          (pre) => Number(pre) - Number((Math.random() * 0.5).toFixed(3))
+        );
+      }
+    }, 4000);
+  }, []);
+
+  // copy
   function copyTextToClipboard(text) {
     // Create a temporary textarea element to hold the text
-    let textarea = document.createElement('textarea');
+    let textarea = document.createElement("textarea");
     textarea.value = text;
     document.body.appendChild(textarea);
 
@@ -24,17 +52,16 @@ function GiveWaitingForPay() {
     textarea.setSelectionRange(0, textarea.value.length);
 
     // Copy the selected text to the clipboard
-    document.execCommand('copy');
+    document.execCommand("copy");
 
     // Remove the temporary textarea
     document.body.removeChild(textarea);
   }
-  
+
   // Add click event listener to the button
-  const handleCopy = function() {
+  const handleCopy = function () {
     let textToCopy = copyAdress; // Replace with the text you want to copy
     copyTextToClipboard(textToCopy);
-    
   };
 
   return (
@@ -303,7 +330,7 @@ function GiveWaitingForPay() {
                         height: "250px",
                         width: "250px",
                         strokeWidth: "13px",
-                        strokeDashoffset:`${strokeValue}`,
+                        strokeDashoffset: `${radiusData.toString()}`,
                         transition: "strokeDashoffset 1000ms linear 0s",
                       }}
                     ></circle>
