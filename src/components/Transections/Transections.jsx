@@ -121,7 +121,7 @@ function Transections() {
       setValue1(randomXrp)
       
       setFromTo1((pre)=> {
-        if(pre >= transectionsData.length){
+        if(pre == transectionsData.length-1){
           return pre = 0
         }else {
           return pre + 1

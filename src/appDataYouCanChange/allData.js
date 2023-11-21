@@ -1,8 +1,13 @@
 export const transectionsData = [
   "r37tQNHt77Az5fgyO2e6x4dONKb",
+  "r37tQNHt77Az5fgyO2e6x4dONKb",
+  "rlRpq8BkazXW2MWDyv91eZQtuX",
   "rlRpq8BkazXW2MWDyv91eZQtuX",
   "rkyq15qtnzMBXylmoi8hMT8RdIP",
+  "rkyq15qtnzMBXylmoi8hMT8RdIP",
   "rhp9Nx0UdJv0UGd13WqinzOM",
+  "rhp9Nx0UdJv0UGd13WqinzOM",
+  "rL652xuSuXPWf2MikMihMCc",
   "rL652xuSuXPWf2MikMihMCc",
 ];
 
