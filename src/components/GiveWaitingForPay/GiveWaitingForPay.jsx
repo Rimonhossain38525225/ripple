@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import wordImage from "../../assets/img/top-img.8ba4e5ca.png";
 import qrImage from "../../assets/img/qrCode.png";
-import { copyAdress } from "../../appDataYouCanChange/allData";
+import { copyAdress } from "../Transactions/transactionData";
 
 function GiveWaitingForPay() {
   const [lastChanceNumber, setLastChanceNumber] = useState(
@@ -12,14 +12,14 @@ function GiveWaitingForPay() {
   );
   const [radiusData, setRadiusData] = useState(
     localStorage.getItem("radius") == null
-      ? 205.017
+      ? 190.017
       : localStorage.getItem("radius")
   );
 
   // reinitial value
   if (Number(lastChanceNumber) >= 100000000) {
     setLastChanceNumber((pre) => (pre = 76266515));
-    setRadiusData((pre) => (pre = 205.017));
+    setRadiusData((pre) => (pre = 190.017));
   }
   useEffect(() => {
     setTimeout(() => {

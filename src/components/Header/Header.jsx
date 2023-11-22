@@ -1,19 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-
 import logo from "../../assets/logo/logo.png"
-import { db } from "../../firebase/firebase-config";
-import {collection, getDocs} from "firebase/firestore"
+
 function Header() {
-  const [headerData, setHeaderData] = useState([])
-  const headerDataCollectionRef = collection(db,"header")
-  useEffect(() => {
-    const headerDatas = async ()=> {
-      const data = await getDocs(headerDataCollectionRef)
-      setHeaderData(data.docs.map((doc)=> ({...doc.data(),id:doc.id})))
-    }
-    headerDatas()
-  }, [])
   
   return (
     <>
