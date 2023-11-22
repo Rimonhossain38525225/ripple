@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
-import logo from "../../assets/logo/logo.png"
+import React from "react";
+import logo from "../../assets/logo/logo.png";
 
 function Header() {
-  
   return (
     <>
       <header>
@@ -11,10 +10,7 @@ function Header() {
           <div className="header">
             <div className="left-box">
               <a href="#" className="logo">
-                <img
-                  src={logo}
-                  alt=""
-                />
+                <img src={logo} alt="" />
               </a>
               <nav id="nav-mb">
                 <a href="#rules">
@@ -32,7 +28,7 @@ function Header() {
                       fill="#6391FF"
                     ></path>
                   </svg>
-                  Rules{" "}
+                 Rules{" "}
                 </a>
                 <a href="#bonus">
                   <svg

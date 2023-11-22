@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { transactionsData } from "./transactionData";
+import { transactionsAllData } from "../allData";
 
 function Transactions() {
   // from To value
@@ -126,7 +126,7 @@ function Transactions() {
       setValue1(randomXrp);
 
       setFromTo1((pre) => {
-        if (pre == transactionsData.length - 1) {
+        if (pre == transactionsAllData.allCangeValueFromTo.length - 1) {
           return (pre = 0);
         } else {
           return pre + 1;
@@ -135,16 +135,26 @@ function Transactions() {
     }, 4000);
   }, []);
 
- const secondValueXrp1 =  Number(value1.slice(0, Random1)+"."+value1.slice(6, 8))
- const firstValueXrp1 = secondValueXrp1 * 2
- const secondValueXrp2 =  Number(value2.slice(0, Random1)+"."+value2.slice(6, 8))
- const firstValueXrp2 = secondValueXrp2 * 2
- const secondValueXrp3 =  Number(value3.slice(0, Random1)+"."+value3.slice(6, 8))
- const firstValueXrp3 = secondValueXrp3 * 2
- const secondValueXrp4 =  Number(value4.slice(0, Random1)+"."+value4.slice(6, 8))
- const firstValueXrp4 = secondValueXrp4 * 2
- const secondValueXrp5 =  Number(value5.slice(0, Random1)+"."+value5.slice(6, 8))
- const firstValueXrp5 = secondValueXrp5 * 2
+  const secondValueXrp1 = Number(
+    value1.slice(0, Random1) + "." + value1.slice(6, 8)
+  );
+  const firstValueXrp1 = secondValueXrp1 * 2;
+  const secondValueXrp2 = Number(
+    value2.slice(0, Random1) + "." + value2.slice(6, 8)
+  );
+  const firstValueXrp2 = secondValueXrp2 * 2;
+  const secondValueXrp3 = Number(
+    value3.slice(0, Random1) + "." + value3.slice(6, 8)
+  );
+  const firstValueXrp3 = secondValueXrp3 * 2;
+  const secondValueXrp4 = Number(
+    value4.slice(0, Random1) + "." + value4.slice(6, 8)
+  );
+  const firstValueXrp4 = secondValueXrp4 * 2;
+  const secondValueXrp5 = Number(
+    value5.slice(0, Random1) + "." + value5.slice(6, 8)
+  );
+  const firstValueXrp5 = secondValueXrp5 * 2;
   return (
     <>
       <div id="transactions" className="transactions">
@@ -198,7 +208,7 @@ function Transactions() {
                     <p className="address">
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                       <br />
-                      {transactionsData[fromTo1]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo1]}
                     </p>
                   </td>
                   <td className="arrow">
@@ -226,7 +236,7 @@ function Transactions() {
                   </td>
                   <td>
                     <p className="address">
-                      {transactionsData[fromTo1]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo1]}
                       <br />
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                     </p>
@@ -235,8 +245,7 @@ function Transactions() {
                     <p className="value">
                       {firstValueXrp1} XRP
                       <br />
-                      {secondValueXrp1}{" "}
-                      XRP
+                      {secondValueXrp1} XRP
                     </p>
                   </td>
                   <td>
@@ -260,7 +269,7 @@ function Transactions() {
                     <p className="address">
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                       <br />
-                      {transactionsData[fromTo2]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo2]}
                     </p>
                   </td>
                   <td className="arrow">
@@ -288,7 +297,7 @@ function Transactions() {
                   </td>
                   <td>
                     <p className="address">
-                      {transactionsData[fromTo2]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo2]}
                       <br />
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                     </p>
@@ -297,8 +306,7 @@ function Transactions() {
                     <p className="value">
                       {firstValueXrp2} XRP
                       <br />
-                      {secondValueXrp2}{" "}
-                      XRP
+                      {secondValueXrp2} XRP
                     </p>
                   </td>
                   <td>
@@ -322,7 +330,7 @@ function Transactions() {
                     <p className="address">
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                       <br />
-                      {transactionsData[fromTo3]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo3]}
                     </p>
                   </td>
                   <td className="arrow">
@@ -350,7 +358,7 @@ function Transactions() {
                   </td>
                   <td>
                     <p className="address">
-                      {transactionsData[fromTo3]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo3]}
                       <br />
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                     </p>
@@ -359,8 +367,7 @@ function Transactions() {
                     <p className="value">
                       {firstValueXrp3} XRP
                       <br />
-                      {secondValueXrp3}{" "}
-                      XRP
+                      {secondValueXrp3} XRP
                     </p>
                   </td>
                   <td>
@@ -384,7 +391,7 @@ function Transactions() {
                     <p className="address">
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                       <br />
-                      {transactionsData[fromTo4]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo4]}
                     </p>
                   </td>
                   <td className="arrow">
@@ -412,7 +419,7 @@ function Transactions() {
                   </td>
                   <td>
                     <p className="address">
-                      {transactionsData[fromTo4]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo4]}
                       <br />
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                     </p>
@@ -421,8 +428,7 @@ function Transactions() {
                     <p className="value">
                       {firstValueXrp4} XRP
                       <br />
-                      {secondValueXrp4}{" "}
-                      XRP
+                      {secondValueXrp4} XRP
                     </p>
                   </td>
                   <td>
@@ -446,7 +452,7 @@ function Transactions() {
                     <p className="address">
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                       <br />
-                      {transactionsData[fromTo5]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo5]}
                     </p>
                   </td>
                   <td className="arrow">
@@ -474,7 +480,7 @@ function Transactions() {
                   </td>
                   <td>
                     <p className="address">
-                      {transactionsData[fromTo5]}
+                      {transactionsAllData.allCangeValueFromTo[fromTo5]}
                       <br />
                       r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E
                     </p>
@@ -483,8 +489,7 @@ function Transactions() {
                     <p className="value">
                       {firstValueXrp5} XRP
                       <br />
-                      {secondValueXrp5}{" "}
-                      XRP
+                      {secondValueXrp5} XRP
                     </p>
                   </td>
                   <td>

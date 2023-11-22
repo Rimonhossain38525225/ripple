@@ -2,24 +2,24 @@
 import React, { useEffect, useState } from "react";
 import wordImage from "../../assets/img/top-img.8ba4e5ca.png";
 import qrImage from "../../assets/img/qrCode.png";
-import { copyAdress } from "../Transactions/transactionData";
+import { MainChanceValue, copyAdress } from "../allData";
 
 function GiveWaitingForPay() {
   const [lastChanceNumber, setLastChanceNumber] = useState(
     localStorage.getItem("chance") == null
-      ? 76266515
+      ? (76.265/100)* MainChanceValue
       : localStorage.getItem("chance")
   );
   const [radiusData, setRadiusData] = useState(
     localStorage.getItem("radius") == null
-      ? 190.017
+      ? 200.017
       : localStorage.getItem("radius")
   );
 
   // reinitial value
-  if (Number(lastChanceNumber) >= 100000000) {
-    setLastChanceNumber((pre) => (pre = 76266515));
-    setRadiusData((pre) => (pre = 190.017));
+  if (Number(lastChanceNumber) >= MainChanceValue) {
+    setLastChanceNumber((pre) => (pre = (76.265/100)* MainChanceValue));
+    setRadiusData((pre) => (pre = 200.017));
   }
   useEffect(() => {
     setTimeout(() => {
@@ -259,7 +259,7 @@ function GiveWaitingForPay() {
               <div className="right-box progress-bar">
                 <div id="rules" className="text-center">
                   <div className="top">
-                    <div className="num">100,000,000</div>
+                    <div className="num">{MainChanceValue.toLocaleString()}</div>
                     <span>/</span>
                     <div className="num">
                       {lastChanceNumber.toLocaleString()}
