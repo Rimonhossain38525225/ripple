@@ -12,14 +12,14 @@ function GiveWaitingForPay() {
   );
   const [radiusData, setRadiusData] = useState(
     localStorage.getItem("radius") == null
-      ? 167.017
+      ? 205.017
       : localStorage.getItem("radius")
   );
 
   // reinitial value
   if (Number(lastChanceNumber) >= 100000000) {
     setLastChanceNumber((pre) => (pre = 76266515));
-    setRadiusData((pre) => (pre = 167.017));
+    setRadiusData((pre) => (pre = 205.017));
   }
   useEffect(() => {
     setTimeout(() => {
