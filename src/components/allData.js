@@ -1,10 +1,10 @@
-// main all chance value 
+// main all chance value
 export const MainChanceValue = 100000000;
 
-// set copy adress 
+// set copy adress
 export const copyAdress = "r1mzEzTKiLvZH4qBPHK3nvT5JGYXfgz5E";
 
-// transaction value (from and to)changable value 
+// transaction value (from and to)changable value
 export const transactionsAllData = {
   allCangeValueFromTo: [
     "r37tQNHt77Az5fgyO2e6x4dONKb",
@@ -14,4 +14,3 @@ export const transactionsAllData = {
     "rL652xuSuXPWf2MikMihMCgrec",
   ],
 };
-

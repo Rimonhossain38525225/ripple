@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { transactionsAllData } from "../allData";
 
 function Transactions() {
+
   // from To value
   const [fromTo1, setFromTo1] = useState(0);
   const [fromTo2, setFromTo2] = useState(1);
@@ -81,9 +82,9 @@ function Transactions() {
       setValue5(value4);
       setRandom5(Random4);
       setSeconRandom5(secondRandom4);
-      setFromTo5(fromTo3);
+      setFromTo5(fromTo4);
     }, 4000);
-  }, [hash4, value4, Random4, secondRandom4, fromTo3]);
+  }, [hash4, value4, Random4, secondRandom4, fromTo4]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -155,6 +156,8 @@ function Transactions() {
     value5.slice(0, Random1) + "." + value5.slice(6, 8)
   );
   const firstValueXrp5 = secondValueXrp5 * 2;
+
+  
   return (
     <>
       <div id="transactions" className="transactions">
@@ -262,7 +265,6 @@ function Transactions() {
                       {hash2.toUpperCase()}
                       <br />
                       {hash2.slice(31).toUpperCase()}
-                      {/* 76SN9OTRNYJNF0KN29O7U86P1......<br />42MER72EE3WS11U0MCZUA0DG8...... */}
                     </p>
                   </td>
                   <td>
@@ -323,7 +325,6 @@ function Transactions() {
                       {hash3.toUpperCase()}
                       <br />
                       {hash3.slice(31).toUpperCase()}
-                      {/* DWQ0OWXMPGTSUTEF98IOL1CZ0......<br />R5OTVBFH04JMT57XXCKB3ANMS...... */}
                     </p>
                   </td>
                   <td>
@@ -384,7 +385,6 @@ function Transactions() {
                       {hash4.toUpperCase()}
                       <br />
                       {hash4.slice(31).toUpperCase()}
-                      {/* 0NN8WGDVEUNK6PBZR7UY1YARQ......<br />T0H44O81IH8IKEV8YH1YBHTXY...... */}
                     </p>
                   </td>
                   <td>
@@ -445,7 +445,6 @@ function Transactions() {
                       {hash5.toUpperCase()}
                       <br />
                       {hash5.slice(31).toUpperCase()}
-                      {/* 0ER4GF92AKMKXOW56MUB0H3JA......<br />329BP5TQ849M037HIC4HO01BN...... */}
                     </p>
                   </td>
                   <td>
